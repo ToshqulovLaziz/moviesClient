@@ -51,13 +51,13 @@ const SearchMovies = () => {
   return (
     <>
       <Search
-        className="mb-6 inline-block w-[500px] custom-search"
+        className="mb-6 inline-block w-full sm:w-80 lg:w-96 custom-search max-ms:w-full max-ms:w-[350px]"
         placeholder="Enter your search movie"
         enterButton="Search"
         size="large"
         onSearch={onSearch}
       />
-      <div className="grid grid-cols-3 gap-4 max-sm:grid-cols-2">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {data?.map((item) => (
           <div key={item.id}>
             <Card
@@ -69,7 +69,7 @@ const SearchMovies = () => {
                   className="cursor-pointer"
                   onClick={() => handleClick(item)}
                   alt="example"
-                  src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}</li>`}
+                  src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`}
                 />
               }
             >
